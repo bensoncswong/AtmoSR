@@ -8,6 +8,10 @@ The recommended training environment is Google Colab with a single NVIDIA
 A100 GPU (40 GB). The runs reported with this code used PyTorch 2.10.0
 and CUDA 12.8.
 
+Trained checkpoints, ERA5 GRIB extracts, and processed NetCDF are archived
+on Zenodo (see [Data archive](#4-data)). Replace the DOI after publication:
+`https://doi.org/10.5281/zenodo.XXXXXXX`.
+
 ## 1. Repository layout
 
 | Path | Description |
@@ -147,6 +151,45 @@ X2_test.nc   Y_test.nc
 ```
 
 Optional 4× files: `X4_train.nc`, `X4_valid.nc`, `X4_test.nc`.
+
+### Zenodo archive
+
+The accompanying data record (CC-BY-4.0) holds three zip files plus a
+README that lists every file. Upload `README.md` as the default preview.
+
+| Zip file | Source folder | Contents |
+| --- | --- | --- |
+| `atmosr_trained_models_v1.0.zip` | `trained_model/` | Checkpoints, scalers, histories, test metrics |
+| `atmosr_era5_raw_grib_v1.0.zip` | `ERA5_raw/` | Hourly ERA5 pressure-level GRIB extracts |
+| `atmosr_processed_netcdf_v1.0.zip` | `dataset/` | Train / valid / test NetCDF (`Y`, `X2`, `X4`) |
+
+Unzip so that `trained_model/`, `ERA5_raw/`, and `dataset/` appear as
+top-level folders. The processed East Asia 500 hPa files sit in the root
+of `dataset/` (`X2_train.nc`, `Y_train.nc`, …). Other levels are under
+`dataset/multilevel/` and `dataset/925hpa/`; other regions under
+`dataset/region/`.
+
+Copy or rename checkpoints into the working directory used by the
+evaluation scripts:
+
+| File in `trained_model/` | Name expected by `evaluate/AtmoSR_ablation_models_eval.py` |
+| --- | --- |
+| `AtmoSRbase/best_model.pth` | `best_model_noPhy.pth` |
+| `AtmoSR/best_model.pth` | `best_model_AllPhy.pth` |
+| `Phy_DIV/best_model.pth` | `best_model_DIV.pth` |
+| `Phy_VOR/best_model.pth` | `best_model_VOR.pth` |
+| `Phy_GEO/best_model.pth` | `best_model_GEO.pth` |
+| `Phy_MSE/best_model.pth` | `best_model_MSE.pth` |
+| `AtmoSR/scalers.joblib` | `scalers.joblib` |
+
+GRIB files in `ERA5_raw/ERA5_500hPa/` use `era5_{year}.grib` and match
+`preprocessing/preprocessing.py`. Contains modified Copernicus Climate
+Change Service information (2022–2025). Neither the European Commission
+nor ECMWF is responsible for any use that may be made of the Copernicus
+information or data it contains.
+
+Full inventory, zip commands, and licence notes are in the Zenodo
+`README.md`.
 
 ## 5. How paths are set
 
@@ -309,3 +352,11 @@ If you use this code, please cite:
 > Wong, C., Kong, H., Zhong, C., Wang, Y., and Du, Y. (2026).
 > AtmoSR: A physics-constrained dual-branch network for atmospheric
 > downscaling.
+
+If you use the archived checkpoints or NetCDF files, also cite the Zenodo
+record (replace the DOI after publication):
+
+> Wong, C., Kong, H., Zhong, C., Wang, Y., and Du, Y. (2026).
+> AtmoSR trained models, ERA5 extracts, and processed NetCDF
+> (Version 1.0) [Data set]. Zenodo.
+> https://doi.org/10.5281/zenodo.XXXXXXX
