@@ -10,7 +10,7 @@ and CUDA 12.8.
 
 Trained checkpoints, ERA5 GRIB extracts, and processed NetCDF are archived
 on Zenodo (see [Data archive](#4-data)). Replace the DOI after publication:
-`https://doi.org/10.5281/zenodo.XXXXXXX`.
+`https://doi.org/10.5281/zenodo.22092919`.
 
 ## 1. Repository layout
 
@@ -359,4 +359,4 @@ record (replace the DOI after publication):
 > Wong, C., Kong, H., Zhong, C., Wang, Y., and Du, Y. (2026).
 > AtmoSR trained models, ERA5 extracts, and processed NetCDF
 > (Version 1.0) [Data set]. Zenodo.
-> https://doi.org/10.5281/zenodo.XXXXXXX
+> https://doi.org/10.5281/zenodo.22092919
