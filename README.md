@@ -9,8 +9,7 @@ A100 GPU (40 GB). The runs reported with this code used PyTorch 2.10.0
 and CUDA 12.8.
 
 Trained checkpoints, ERA5 GRIB extracts, and processed NetCDF are archived
-on Zenodo (see [Data archive](#4-data)). Replace the DOI after publication:
-`https://doi.org/10.5281/zenodo.22092919`.
+on Zenodo (see [Data archive](#4-data)). `https://doi.org/10.5281/zenodo.22092919`.
 
 ## 1. Repository layout
 
@@ -65,8 +64,8 @@ the repository):
 !apt-get install -y -qq libeccodes-dev libeccodes-tools \
     libproj-dev proj-data proj-bin libgeos-dev
 
-!git clone https://github.com/<OWNER>/<REPO>.git
-%cd <REPO>
+!git clone https://github.com/bensoncswong/AtmoSR.git
+%cd AtmoSR
 !pip install -q -r requirements.txt
 ```
 
