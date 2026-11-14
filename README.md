@@ -178,8 +178,15 @@ Optional 4× files: `X4_train.nc`, `X4_valid.nc`, `X4_test.nc`.
 
 ### Zenodo archive
 
-The accompanying data record (CC-BY-4.0) holds three zip files plus a
-README that lists every file. Upload `README.md` as the default preview.
+The accompanying data and trained-model archive is available at
+https://doi.org/10.5281/zenodo.22092919. It contains three ZIP files and
+an archive README. Consult the record description and archive
+documentation for the file inventory and the licence terms applicable
+to each component.
+
+The source code is archived separately at https://doi.org/10.5281/zenodo.24215574.
+The software archive and data archive are linked but have independent
+version histories.
 
 | Zip file | Source folder | Contents |
 | --- | --- | --- |
@@ -371,16 +378,29 @@ CUDA 12.8 to stay close to the reported configuration.
 
 ## 9. Citation
 
-If you use this code, please cite:
+If you use the AtmoSR software, cite the version-specific software
+archive:
 
-> Wong, C., Kong, H., Zhong, C., Wang, Y., and Du, Y. (2026).
-> AtmoSR: A physics-constrained dual-branch network for atmospheric
-> downscaling.
+Wong, C., Kong, H., Zhong, C., Wang, Y., and Du, Y. (2026).
+Source code for AtmoSR v1.0: a dual-branch model for atmospheric spatial
+downscaling with relative-error physics constraints (Version 1.0)
+[Software]. Zenodo. https://doi.org/10.5281/zenodo.24215574
 
-If you use the archived checkpoints or NetCDF files, also cite the Zenodo
-record (replace the DOI after publication):
+If you use the archived data, trained checkpoints, or associated model
+artifacts, also cite:
 
-> Wong, C., Kong, H., Zhong, C., Wang, Y., and Du, Y. (2026).
-> AtmoSR trained models, ERA5 extracts, and processed NetCDF
-> (Version 1.0) [Data set]. Zenodo.
-> https://doi.org/10.5281/zenodo.22092919
+Wong, C., Kong, H., Zhong, C., Wang, Y., and Du, Y. (2026).
+Data and Model Weights for "AtmoSR: Physically Consistent Atmospheric
+Spatial Downscaling with Dual-Branch Network and Relative-Error
+Balanced Constraints" (Version V1.0) [Data set]. Zenodo.
+https://doi.org/10.5281/zenodo.22092919
+
+## Licence
+
+The AtmoSR source code is released under the MIT License. See LICENSE
+for the full text.
+
+Data and trained-model artifacts are distributed through the separate
+Zenodo data record. Their applicable licence terms and attribution
+requirements are described in that record. The software licence does
+not replace the licence terms governing ERA5 source data.
