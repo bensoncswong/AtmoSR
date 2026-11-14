@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the version-specific Zenodo software archive."
+type: software
+title: "Source code for AtmoSR v1.0: a dual-branch model for atmospheric spatial downscaling with relative-error physics constraints"
+version: "1.0"
+date-released: "<RELEASE_DATE>"
+doi: "zenodo.24215574"
+url: "https://github.com/bensoncswong/AtmoSR"
+repository-code: "https://github.com/bensoncswong/AtmoSR"
+license: MIT
+authors:
+  - family-names: Wong
+    given-names: "C."
+  - family-names: Kong
+    given-names: "H."
+  - family-names: Zhong
+    given-names: "C."
+  - family-names: Wang
+    given-names: "Y."
+  - family-names: Du
+    given-names: "Y."
+abstract: >
+  AtmoSR is a dual-branch model for atmospheric spatial downscaling.
+  It combines a fixed bicubic branch with a residual convolutional
+  neural network and uses a Global Relative Error loss to normalize
+  four supervised physics constraints.
+keywords:
+  - atmospheric downscaling
+  - super-resolution
+  - ERA5
+  - physics constraints
+  - Global Relative Error
+  - PyTorch
