@@ -1,15 +1,40 @@
 # AtmoSR
 
-Physics-constrained dual-branch network for atmospheric spatial downscaling.
-The repository contains preprocessing, training, evaluation, spectral and
-extreme-value diagnostics, and figure scripts.
+# AtmoSR v1.0
 
-The recommended training environment is Google Colab with a single NVIDIA
-A100 GPU (40 GB). The runs reported with this code used PyTorch 2.10.0
-and CUDA 12.8.
+AtmoSR is a dual-branch model for jointly downscaling geopotential,
+specific humidity, temperature, and horizontal wind. It combines a fixed
+bicubic branch with a residual convolutional neural network. Training
+uses an L1 reconstruction loss and four supervised physics constraints
+normalized by the Global Relative Error (GRE) loss.
 
-Trained checkpoints, ERA5 GRIB extracts, and processed NetCDF are archived
-on Zenodo (see [Data archive](#4-data)). `https://doi.org/10.5281/zenodo.22092919`.
+This repository provides preprocessing, training, evaluation, spectral
+analysis, upper-tail diagnostics, and plotting scripts.
+
+## Software and data
+
+- Source-code archive for version 1.0:
+  https://doi.org/10.5281/zenodo.24215574
+- GitHub release:
+  https://github.com/bensoncswong/AtmoSR/releases/tag/v1.0
+- Data and trained-model archive:
+  https://doi.org/10.5281/zenodo.22092919
+
+The software archive preserves the source code for the version described
+in the accompanying manuscript. The data archive contains ERA5 extracts,
+processed NetCDF files, trained checkpoints, and associated model
+artifacts.
+
+The main branch contains ongoing development. Use the archived version
+or the v1.0 release when reproducing the manuscript.
+
+## Getting started
+
+See the installation instructions below and REPRODUCING.md for data
+placement, execution steps, and experiment settings.
+
+The documented training configuration uses Python 3.10 or newer,
+PyTorch 2.10.0, CUDA 12.8, and one NVIDIA A100 GPU with 40 GB of memory.
 
 ## 1. Repository layout
 
